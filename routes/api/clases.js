@@ -31,4 +31,10 @@ router.get('/',(req,res,next)=>{
     res.status(200).json(clasesCollection);
 });
 
+router.post('/',(req,res,next)=>{
+    var newElement=Object.assign({},clasesStruct,req.body);
+    clasesCollection.push(newElement);
+    res.status(200).json(clasesCollection);
+});
+
 module.exports=router;
