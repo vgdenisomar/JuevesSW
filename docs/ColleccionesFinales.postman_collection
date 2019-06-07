@@ -152,11 +152,8 @@
 		},
 		{
 			"name": "http://localhost:3000/api/clases",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -170,33 +167,37 @@
 					"urlencoded": [
 						{
 							"key": "clase",
-							"value": "seminario 2",
+							"value": "seminario 4",
 							"type": "text"
 						},
 						{
 							"key": "seccion",
 							"value": "21",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "cupos",
 							"value": "21",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "campus",
 							"value": "SCJ",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						},
 						{
 							"key": "docente",
 							"value": "Aracely",
-							"type": "text"
+							"type": "text",
+							"disabled": true
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:3000/api/clases",
+					"raw": "http://localhost:3000/api/clases/781b4463-6f51-4b36-8641-f677517caebb",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -204,7 +205,29 @@
 					"port": "3000",
 					"path": [
 						"api",
-						"clases"
+						"clases",
+						"781b4463-6f51-4b36-8641-f677517caebb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/api/clases/781b4463-6f51-4b36-8641-f677517caebb",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/clases/781b4463-6f51-4b36-8641-f677517caebb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"clases",
+						"781b4463-6f51-4b36-8641-f677517caebb"
 					]
 				}
 			},
