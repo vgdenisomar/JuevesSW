@@ -67,5 +67,19 @@ router.put('/:id', (req, res, next)=>{
     res.status(200).json({ Original: claseorginal, Modificada: clasemodificada});
 });
 
+router.delete('/:id', (req, res, next)=>{
+    var id = req.params.id;
+    var claseEliminada = {};
+    clasesCollection = clasesCollection.filter((e,i)=>{
+      if(e.id === id){
+        claseEliminada = Object.assign({},e);
+        return false;
+      }
+      return true;
+    });
+    res.status(200).json({Eliminada:claseEliminada, Clases:clasesCollection});
+});
+  
+
 
 module.exports=router;
