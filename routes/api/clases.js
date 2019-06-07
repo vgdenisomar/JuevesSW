@@ -53,4 +53,19 @@ router.post('/',(req,res,next)=>{
     res.status(200).json(clasesCollection);
 });
 
+router.put('/:id', (req, res, next)=>{
+    var id = req.params.id;
+    var clasemodificada = {};
+    var claseorginal = {};
+    clasesCollection = clasesCollection.map( (e, i) => {
+      if(e.id === id){
+        claseorginal = Object.assign({}, e);
+        return clasemodificada = Object.assign({}, e, req.body);
+      }
+      return e;
+    });
+    res.status(200).json({ Original: claseorginal, Modificada: clasemodificada});
+});
+
+
 module.exports=router;
